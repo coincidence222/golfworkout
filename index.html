@@ -32,7 +32,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx1);font-family:-apple-s
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
 input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
-
+ 
 /* ── LAYOUT ── */
 #app{display:flex;flex-direction:column;height:100dvh;height:100vh}
 .app-header{background:var(--green);color:#fff;padding:env(safe-area-inset-top,0) 0 0;flex-shrink:0}
@@ -41,21 +41,21 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
 .app-header p{font-size:11px;opacity:.75;margin-top:1px}
 .save-status{font-size:11px;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:20px;display:none}
 .save-status.show{display:block}
-
+ 
 .nav-bar{display:flex;background:var(--bg2);border-bottom:1px solid var(--bdr);flex-shrink:0;box-shadow:var(--shadow)}
 .nav-btn{flex:1;padding:10px 4px 8px;background:transparent;border:none;border-bottom:2.5px solid transparent;color:var(--tx3);cursor:pointer;font-size:10px;font-family:inherit;transition:all .15s;line-height:1.5}
 .nav-btn svg{display:block;margin:0 auto 2px;width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .nav-btn.active{color:var(--green);border-bottom-color:var(--green);font-weight:600}
-
+ 
 .view-wrap{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .view{display:none}
 .view.active{display:block;padding-bottom:24px}
-
+ 
 /* ── SEARCH ── */
 .search-wrap{padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:5}
 .search-inp{width:100%;padding:9px 14px;border:1px solid var(--bdr2);border-radius:var(--radlg);background:var(--bg3);color:var(--tx1);font-size:14px;font-family:inherit;outline:none}
 .search-inp:focus{border-color:var(--green2)}
-
+ 
 /* ── CAT / EX LIST ── */
 .cat-hdr{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--bg3);border-top:1px solid var(--bdr);cursor:pointer;user-select:none}
 .cat-hdr-l{display:flex;align-items:center;gap:8px}
@@ -64,7 +64,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
 .cat-hdr-cnt{font-size:11px;color:var(--tx3)}
 .cat-chevron{color:var(--tx3);font-size:16px;transition:transform .2s}
 .cat-chevron.open{transform:rotate(180deg)}
-
+ 
 .ex-list{background:var(--bg2)}
 .ex-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px 10px;border-bottom:1px solid var(--bdr)}
 .ex-row:last-child{border-bottom:none}
@@ -74,27 +74,43 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
 .ex-muscle{font-size:11px;color:var(--tx3);margin-top:2px}
 .ex-tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--green4);color:var(--green);font-weight:600;white-space:nowrap;flex-shrink:0}
 @media(prefers-color-scheme:dark){.ex-tag{background:#0a3a2a;color:var(--green3)}}
-
+ 
 /* ── DAY TABS ── */
 .day-tabs{display:flex;background:var(--bg2);border-bottom:1px solid var(--bdr)}
 .day-tab{flex:1;padding:10px 4px;text-align:center;background:transparent;border:none;border-bottom:2.5px solid transparent;cursor:pointer;font-size:10px;color:var(--tx3);font-family:inherit;transition:all .15s;line-height:1.5}
 .day-tab.active{color:var(--green);border-bottom-color:var(--green);font-weight:600}
-
+ 
+/* ── ROUTINE SELECTOR ── */
+.routine-sel-wrap{background:var(--bg2);border-bottom:3px solid var(--bg3);padding:12px 14px}
+.routine-sel-label{font-size:10px;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+.routine-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:10px}
+.routine-chip{padding:8px 4px;border-radius:var(--rad);border:1.5px solid var(--bdr2);background:var(--bg3);cursor:pointer;text-align:center;transition:all .15s;user-select:none}
+.routine-chip.active{border-color:var(--green);background:var(--green4)}
+.routine-chip-label{font-size:14px;font-weight:700;color:var(--tx1);line-height:1}
+.routine-chip-theme{font-size:9px;color:var(--tx3);margin-top:2px;line-height:1.2}
+.routine-chip.active .routine-chip-label{color:var(--green)}
+.routine-chip.active .routine-chip-theme{color:var(--green)}
+.routine-desc-box{background:var(--bg3);border-radius:var(--rad);padding:10px 12px;border-left:3px solid var(--green2)}
+.routine-desc-title{font-size:13px;font-weight:700;color:var(--tx1);margin-bottom:4px}
+.routine-desc-text{font-size:11px;color:var(--tx2);line-height:1.6}
+.routine-ex-pills{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.routine-ex-pill{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--bg2);border:1px solid var(--bdr2);color:var(--tx2)}
+ 
 /* ── DATE ROW ── */
 .date-row{display:flex;align-items:center;gap:8px;padding:9px 14px;background:var(--green);color:#fff}
 .date-row label{font-size:12px;opacity:.85;flex-shrink:0}
 .date-inp{flex:1;background:transparent;border:none;color:#fff;font-size:13px;font-family:inherit;outline:none}
-
+ 
 /* ── EX LOG CARD ── */
 .ex-log-card{border-bottom:4px solid var(--bg3)}
 .ex-card-top{display:flex;align-items:center;gap:8px;padding:11px 14px 7px}
 .ex-card-color{width:4px;border-radius:2px;height:28px;flex-shrink:0}
 .ex-card-name{font-size:13px;font-weight:600;color:var(--tx1)}
 .ex-card-cat{margin-left:auto;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
-
+ 
 .prev-hint{margin:0 14px 8px;padding:7px 10px;border-radius:var(--rad);border-left:3px solid var(--green2);font-size:11px;color:var(--green);background:var(--green4);line-height:1.5}
 @media(prefers-color-scheme:dark){.prev-hint{background:#0a3a2a;color:var(--green3)}}
-
+ 
 .sets-area{padding:0 14px 4px}
 .set-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;padding:7px 10px;border-radius:var(--rad);border:1px solid var(--bdr);background:var(--bg3)}
 .set-badge{font-size:10px;font-weight:700;color:#fff;border-radius:12px;padding:3px 8px;flex-shrink:0;min-width:42px;text-align:center}
@@ -104,10 +120,10 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
 .unit{font-size:11px;color:var(--tx3);flex-shrink:0}
 .divider-v{width:1px;height:22px;background:var(--bdr2);flex-shrink:0}
 .del-btn-s{background:transparent;border:none;color:var(--tx3);cursor:pointer;font-size:18px;padding:0 2px;flex-shrink:0;line-height:1;width:24px;text-align:center}
-
+ 
 .add-set-btn{display:flex;align-items:center;justify-content:center;gap:5px;margin:0 14px 10px;width:calc(100% - 28px);padding:8px;background:transparent;border:1.5px dashed var(--bdr2);border-radius:var(--rad);color:var(--tx2);font-size:12px;font-family:inherit;cursor:pointer}
 .add-set-btn:active{background:var(--bg3)}
-
+ 
 /* ── ADD EX ── */
 .add-ex-wrap{background:var(--bg3);border-top:4px solid var(--bdr);padding:12px 14px}
 .add-ex-title{font-size:11px;font-weight:600;color:var(--tx2);margin-bottom:8px}
@@ -120,19 +136,19 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
 .add-ex-nm{font-size:13px;font-weight:500;color:var(--tx1)}
 .add-ex-sub{font-size:11px;color:var(--tx3);margin-top:1px}
 .add-ex-plus{font-size:22px;color:var(--green2);line-height:1;flex-shrink:0}
-
+ 
 /* ── TOTAL ── */
 .total-card{margin:12px 14px 8px;background:var(--bg2);border:2px solid var(--green2);border-radius:var(--radlg);padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;box-shadow:var(--shadow)}
 .total-item{text-align:center}
 .total-label{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
 .total-val{font-size:22px;font-weight:700;color:var(--green)}
 .total-unit{font-size:11px;color:var(--tx2);font-weight:400}
-
+ 
 /* ── SAVE BTN ── */
 .save-main-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:calc(100% - 28px);margin:0 14px 12px;padding:14px;background:var(--green);border:none;border-radius:var(--radlg);color:#fff;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s;box-shadow:0 2px 8px rgba(15,110,86,.3)}
 .save-main-btn.saved{background:#3B6D11}
 .save-main-btn:active{background:#085041}
-
+ 
 /* ── HISTORY ── */
 .chart-wrap{background:var(--bg2);padding:14px;border-bottom:1px solid var(--bdr)}
 .chart-title{font-size:12px;font-weight:600;color:var(--tx1);margin-bottom:12px}
@@ -181,7 +197,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
     <div id="tab-history" class="view"></div>
   </div>
 </div>
-
+ 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────
@@ -290,25 +306,74 @@ const EX_DB=[
   {n:"폼롤러 흉추 익스텐션",c:"회전·기능",m:"흉추 가동성"}
 ];
 const DAYS=[
-  {label:"DAY 1",theme:"상체 Push",exs:["바벨 숄더 프레스","인클라인 덤벨 프레스","덤벨 래터럴 레이즈","케이블 트라이셉스 푸시다운"]},
-  {label:"DAY 2",theme:"하체 + 코어",exs:["고블릿 스쿼트","루마니안 데드리프트","케이블 우드촙 (대각선)","플랭크 with 숄더 탭"]},
-  {label:"DAY 3",theme:"상체 Pull + 회전",exs:["친업 (Chin-up)","케이블 페이스 풀","덤벨 원암 로우","밴드 외회전 (회전근개)"]}
+  {
+    label:"A",theme:"상체 Push",
+    desc:"어깨·가슴·삼두 중심. 임팩트 파워와 팔로우스루 근력 강화.",
+    exs:["바벨 숄더 프레스","인클라인 덤벨 프레스","덤벨 래터럴 레이즈","케이블 트라이셉스 푸시다운"]
+  },
+  {
+    label:"B",theme:"하체 + 코어",
+    desc:"둔근·햄스트링·코어 집중. 어드레스 자세 안정과 스윙 지지력.",
+    exs:["고블릿 스쿼트","루마니안 데드리프트","케이블 우드촙 (대각선)","플랭크 with 숄더 탭"]
+  },
+  {
+    label:"C",theme:"상체 Pull + 회전",
+    desc:"광배근·회전근개 강화. 백스윙 당기는 힘과 어깨 부상 예방.",
+    exs:["친업 (Chin-up)","케이블 페이스 풀","덤벨 원암 로우","밴드 외회전 (회전근개)"]
+  },
+  {
+    label:"D",theme:"어깨 집중",
+    desc:"삼각근 전체 균형 발달. 스윙 궤도 안정성과 임팩트 시 어깨 파워.",
+    exs:["바벨 숄더 프레스","덤벨 래터럴 레이즈","리어 델트 플라이","케이블 페이스 풀","Arnold 프레스"]
+  },
+  {
+    label:"E",theme:"하체 파워",
+    desc:"대퇴사두·둔근 폭발력. 다운스윙 체중이동과 지면반력 극대화.",
+    exs:["바벨 백 스쿼트","루마니안 데드리프트","힙 쓰러스트","레그 프레스","카프 레이즈"]
+  },
+  {
+    label:"F",theme:"코어 + 회전",
+    desc:"복사근·코어 안정성 특화. 골프 스윙 회전 패턴을 직접 모방.",
+    exs:["케이블 우드촙 (대각선)","러시안 트위스트","플랭크 with 숄더 탭","행잉 레그 레이즈","케이블 코어 로테이션","Ab 롤아웃"]
+  },
+  {
+    label:"G",theme:"등 + 광배근",
+    desc:"광배근·능형근 강화. 백스윙 깊이와 다운스윙 당기는 힘 개선.",
+    exs:["풀업 (Pull-up)","바벨 로우","케이블 시티드 로우","랫 풀다운","덤벨 원암 로우"]
+  },
+  {
+    label:"H",theme:"전신 복합",
+    desc:"다관절 복합 운동. 골프에 필요한 전신 협응 능력과 운동 효율.",
+    exs:["데드리프트","바벨 숄더 프레스","친업 (Chin-up)","고블릿 스쿼트","케이블 우드촙 (대각선)","플랭크 with 숄더 탭"]
+  },
+  {
+    label:"I",theme:"골프 특화 기능",
+    desc:"스윙 동작을 직접 모방한 기능성 운동. 가동성·균형·회전 집중.",
+    exs:["골프 스윙 케이블 (LOW-HIGH)","팔로우스루 케이블 (HIGH-LOW)","흉추 로테이션","Hip 90/90 스트레칭","밴드 힙 회전","폼롤러 흉추 익스텐션"]
+  },
+  {
+    label:"J",theme:"부상 예방 + 회복",
+    desc:"회전근개·전완·소근육 강화. 골프 엘보·어깨 부상 예방 루틴.",
+    exs:["밴드 외회전 (회전근개)","케이블 페이스 풀","리스트 컬","팜업 리스트 컬","클램쉘","버드독","데드버그"]
+  }
 ];
 const CATS=Object.keys(CAT_COLORS);
-
+ 
 // ── STATE ─────────────────────────────────────────────────────────────
 const LS_KEY='golf_workout_v3';
 let catOpen={}; CATS.forEach(c=>catOpen[c]=false);
 let rSearch='', aSearch='';
 let activeTab='routine', activeDay=0;
 let logDate=today();
-let logInputs={0:{},1:{},2:{}}; // {di:{ei:[{kg,reps}]}}
-let extraEx={0:[],1:[],2:[]};
+let logInputs={}; // {di:{ei:[{kg,reps}]}}
+let extraEx={};
+// init all 10 routines
+for(let i=0;i<10;i++){logInputs[i]={};extraEx[i]=[];}
 let chartInst=null;
-
+ 
 function today(){const d=new Date();return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;}
 function pad(n){return String(n).padStart(2,'0');}
-
+ 
 // ── STORAGE ───────────────────────────────────────────────────────────
 function loadLogs(){try{return JSON.parse(localStorage.getItem(LS_KEY)||'{}')}catch(e){return{}}}
 function saveLogs(data){try{localStorage.setItem(LS_KEY,JSON.stringify(data))}catch(e){}}
@@ -316,7 +381,7 @@ function getAllLogs(){return loadLogs();}
 function getLogEntry(key){return loadLogs()[key]||null;}
 function setLogEntry(key,val){const d=loadLogs();d[key]=val;saveLogs(d);}
 function delLogEntry(key){const d=loadLogs();delete d[key];saveLogs(d);}
-
+ 
 // ── TABS ──────────────────────────────────────────────────────────────
 function switchTab(tab){
   activeTab=tab;
@@ -328,7 +393,7 @@ function switchTab(tab){
   if(tab==='log')renderLog();
   if(tab==='history')renderHistory();
 }
-
+ 
 // ── ROUTINE ───────────────────────────────────────────────────────────
 function renderRoutine(){
   const el=document.getElementById('tab-routine');
@@ -363,7 +428,7 @@ function renderRoutine(){
   });
   el.innerHTML=h;
 }
-
+ 
 // ── LOG ───────────────────────────────────────────────────────────────
 function getExList(di){return [...DAYS[di].exs,...(extraEx[di]||[])];}
 function ensureInput(di,ei){
@@ -381,14 +446,53 @@ function setVal(di,ei,si,field,val){
   logInputs[di][ei][si][field]=val;
   refreshTotal();
 }
+function onAddExSearch(val){
+  aSearch=val;
+  const el=document.getElementById('add-ex-results');
+  if(!el)return;
+  const q=val.trim().toLowerCase();
+  const exList=getExList(activeDay);
+  let items;
+  if(!q){
+    items=EX_DB.filter(e=>e.t&&!exList.includes(e.n)).slice(0,6);
+  } else {
+    const starts=EX_DB.filter(e=>!exList.includes(e.n)&&(e.n.toLowerCase().startsWith(q)||e.c.toLowerCase().startsWith(q)));
+    const contains=EX_DB.filter(e=>!exList.includes(e.n)&&!starts.includes(e)&&(e.n.toLowerCase().includes(q)||e.c.toLowerCase().includes(q)||e.m.toLowerCase().includes(q)));
+    items=[...starts,...contains].slice(0,8);
+  }
+  if(!items.length){
+    el.innerHTML=q?`<div style="padding:10px 12px;font-size:12px;color:var(--tx3)">검색 결과 없음</div>`:'';
+    return;
+  }
+  el.innerHTML='<div class="add-ex-results">'+items.map(e=>`
+    <div class="add-ex-item" onclick="addEx('${e.n.replace(/'/g,"\\'")}')">
+      <div>
+        <div class="add-ex-nm">${highlightMatch(e.n,q)}</div>
+        <div class="add-ex-sub">${e.c} · ${e.m}</div>
+      </div>
+      <span class="add-ex-plus">＋</span>
+    </div>`).join('')+'</div>';
+}
+ 
+function highlightMatch(text,q){
+  if(!q)return text;
+  const idx=text.toLowerCase().indexOf(q);
+  if(idx<0)return text;
+  return text.slice(0,idx)+'<span style="color:var(--green);font-weight:700">'+text.slice(idx,idx+q.length)+'</span>'+text.slice(idx+q.length);
+}
+ 
 function addEx(name){
   const list=getExList(activeDay);
   if(list.includes(name))return;
   extraEx[activeDay].push(name);
   aSearch='';
+  const inp=document.getElementById('add-ex-inp');
+  if(inp)inp.value='';
+  const res=document.getElementById('add-ex-results');
+  if(res)res.innerHTML='';
   renderLog();
 }
-
+ 
 function calcVol(di){
   let t=0;
   getExList(di).forEach((_,i)=>{
@@ -412,7 +516,7 @@ function totalHTML(){
   <div class="total-item"><div class="total-label">총 세트</div>
     <div class="total-val">${s}<span class="total-unit"> 세트</span></div></div>`;
 }
-
+ 
 function getPrevRecord(exName){
   const logs=getAllLogs();
   const keys=Object.keys(logs).sort().reverse();
@@ -427,17 +531,46 @@ function getPrevRecord(exName){
   }
   return null;
 }
-
+ 
+function buildRoutineSelector(di){
+  const d=DAYS[di];
+  let h=`<div class="routine-sel-wrap">
+    <div class="routine-sel-label">오늘의 루틴 선택</div>
+    <div class="routine-grid">`;
+  DAYS.forEach((r,i)=>{
+    h+=`<div class="routine-chip${di===i?' active':''}" onclick="selectRoutine(${i})">
+      <div class="routine-chip-label">${r.label}</div>
+      <div class="routine-chip-theme">${r.theme.split(' ')[0]}</div>
+    </div>`;
+  });
+  h+=`</div>
+    <div class="routine-desc-box">
+      <div class="routine-desc-title">${d.label} · ${d.theme}</div>
+      <div class="routine-desc-text">${d.desc}</div>
+      <div class="routine-ex-pills">${d.exs.map(e=>`<span class="routine-ex-pill">${e}</span>`).join('')}</div>
+    </div>
+  </div>`;
+  return h;
+}
+ 
+function selectRoutine(i){
+  activeDay=i;
+  if(!logInputs[i])logInputs[i]={};
+  if(!extraEx[i])extraEx[i]=[];
+  DAYS[i].exs.forEach((_,ei)=>{
+    if(!logInputs[i][ei])logInputs[i][ei]=[{kg:'',reps:''}];
+  });
+  renderLog();
+}
+ 
 function renderLog(){
   const el=document.getElementById('tab-log');
   const di=activeDay;
   const exList=getExList(di);
-
-  let h=`<div class="day-tabs">`;
-  DAYS.forEach((d,i)=>h+=`<button class="day-tab${di===i?' active':''}" onclick="activeDay=${i};renderLog()">${d.label}<br><span style="font-size:9px;opacity:.7">${d.theme}</span></button>`);
-  h+=`</div>`;
-  h+=`<div class="date-row"><label>📅 날짜</label><input class="date-inp" type="date" value="${logDate}" onchange="logDate=this.value;renderLog()"></div>`;
-
+ 
+  let h=`<div class="date-row"><label>📅 날짜</label><input class="date-inp" type="date" value="${logDate}" onchange="logDate=this.value;renderLog()"></div>`;
+  h+=buildRoutineSelector(di);
+ 
   exList.forEach((exName,i)=>{
     ensureInput(di,i);
     const sets=logInputs[di][i];
@@ -475,23 +608,28 @@ function renderLog(){
       <button class="add-set-btn" onclick="addSet(${di},${i})">＋ 세트 추가</button>
     </div>`;
   });
-
-  const q=aSearch.toLowerCase();
-  const res=q?EX_DB.filter(e=>(e.n.toLowerCase().includes(q)||e.c.toLowerCase().includes(q))&&!exList.includes(e.n)).slice(0,8):[];
+ 
   h+=`<div class="add-ex-wrap">
     <div class="add-ex-title">＋ 다른 운동 추가하기</div>
-    <input class="add-ex-inp" type="text" placeholder="운동명 또는 부위 검색..." value="${esc(aSearch)}" oninput="aSearch=this.value;renderLog()">
-    ${res.length?`<div class="add-ex-results">`+res.map(e=>`<div class="add-ex-item" onclick="addEx('${e.n.replace(/'/g,"\\'")}')">
-      <div><div class="add-ex-nm">${e.n}</div><div class="add-ex-sub">${e.c} · ${e.m}</div></div>
-      <span class="add-ex-plus">＋</span>
-    </div>`).join('')+`</div>`:''}
+    <input class="add-ex-inp" id="add-ex-inp" type="text" placeholder="운동명 또는 부위 검색... (예: 어깨, 벤치)" autocomplete="off" autocorrect="off" spellcheck="false"
+      oninput="onAddExSearch(this.value)"
+      onfocus="onAddExSearch(this.value)">
+    <div id="add-ex-results"></div>
   </div>`;
-
+ 
   h+=`<div class="total-card" id="total-card">${totalHTML()}</div>`;
   h+=`<button class="save-main-btn" id="save-btn" onclick="doSave()">💾 기록 저장</button>`;
+  // 검색창 값 보존
+  const prevSearch=aSearch;
   el.innerHTML=h;
+  // 검색 결과 복원
+  if(prevSearch){
+    const inp=document.getElementById('add-ex-inp');
+    if(inp){inp.value=prevSearch;}
+    onAddExSearch(prevSearch);
+  }
 }
-
+ 
 function doSave(){
   const di=activeDay;
   const exList=getExList(di);
@@ -510,26 +648,26 @@ function doSave(){
   const ss=document.getElementById('save-status');
   if(ss){ss.classList.add('show');setTimeout(()=>ss.classList.remove('show'),2500);}
 }
-
+ 
 // ── HISTORY ───────────────────────────────────────────────────────────
 function renderHistory(){
   const el=document.getElementById('tab-history');
   const logs=getAllLogs();
   const entries=Object.entries(logs).sort((a,b)=>b[0].localeCompare(a[0]));
-
+ 
   const dateMap={};
   entries.forEach(([_,v])=>{dateMap[v.date]=(dateMap[v.date]||0)+(v.total||0);});
   const cDates=Object.keys(dateMap).sort().slice(-14);
   const cVals=cDates.map(d=>dateMap[d]);
   const isDark=window.matchMedia('(prefers-color-scheme:dark)').matches;
-
+ 
   let h=`<div class="chart-wrap">
     <div class="chart-title">📈 일별 총 볼륨 추이 (최근 14일)</div>
     <div style="position:relative;width:100%;height:${Math.max(cDates.length*24+80,140)}px">
       <canvas id="vol-chart" role="img" aria-label="일별 볼륨 추이">${cDates.map((d,i)=>d+':'+cVals[i]+'kg').join(', ')}</canvas>
     </div>
   </div>`;
-
+ 
   if(!entries.length){
     h+=`<div class="empty">저장된 기록이 없습니다.<br>기록 탭에서 운동 후 저장해보세요 💪</div>`;
   } else {
@@ -554,7 +692,7 @@ function renderHistory(){
     });
   }
   el.innerHTML=h;
-
+ 
   if(chartInst){chartInst.destroy();chartInst=null;}
   const ctx=document.getElementById('vol-chart');
   if(ctx&&cDates.length){
@@ -578,20 +716,23 @@ function renderHistory(){
     });
   }
 }
-
+ 
 function delEntry(key){
   if(confirm('이 기록을 삭제할까요?')){delLogEntry(key);renderHistory();}
 }
-
+ 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
-
+ 
 // ── INIT ──────────────────────────────────────────────────────────────
 DAYS.forEach((_,di)=>{
-  logInputs[di]={};
-  DAYS[di].exs.forEach((_,ei)=>{logInputs[di][ei]=[{kg:'',reps:''}];});
+  if(!logInputs[di])logInputs[di]={};
+  if(!extraEx[di])extraEx[di]=[];
+  DAYS[di].exs.forEach((_,ei)=>{
+    if(!logInputs[di][ei])logInputs[di][ei]=[{kg:'',reps:''}];
+  });
 });
 renderRoutine();
-
+ 
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));
 }
